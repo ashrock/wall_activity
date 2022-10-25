@@ -118,19 +118,19 @@ h1{
 }
 #wall_posts_list .post_content{
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
-.comments_list, .comment_form{
+.comments_list, .comments_list:not(.replies_list) + .comment_form{
   padding: 0px 0px 0px 16px;
 }
-.comments_list li{
+.comments_list .comment_item{
   padding: 10px;
 }
-.comments_list li:nth-child(2n+1){
+.comments_list .comment_item:nth-child(2n+1){
   background: #F5F9FF;
 }
-.comments_list li p{
-  margin: 0px;
+.comments_list .comment_item > p{
+  margin: 0px 0px 6px;
 }
 #clone_contents{
   display: none;

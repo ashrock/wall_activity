@@ -44,6 +44,9 @@ const v88 = (element_selector) => {
       self.dispatchEvent(new Event(event_name));
       return self;
     },
+    hasClass: (class_name) =>{
+      return self.classList.contains(class_name);
+    }
   }
 }
 
@@ -125,14 +128,19 @@ function submitCommentForm(event){
   let comment_form = v88(event.target);
 
   if(comment_form.find(".comment_content").get().value.length){
-    let wall_post_item = comment_form.getParent();
-    let comment_item_clone = v88(".comment_item_clone").copy();
+    let post_comment_item = comment_form.getParent();
+    let comment_item_clone = (post_comment_item.hasClass("wall_post_item")) ? v88(".comment_item_clone").copy() : v88(".reply_item_clone").copy();
     comment_item_clone.removeClass("comment_item_clone");
-    wall_post_item.find(".comments_list").append(comment_item_clone);
+    comment_item_clone.removeClass("reply_item_clone");
+    post_comment_item.find(".comments_list").append(comment_item_clone);
   
     comment_item_clone.find(".comment_content").text(comment_form.find(".comment_content").get().value);
-    comment_form.get().trigger();
+    comment_item_clone.find("textarea").get() && comment_item_clone.find("textarea").on("keyup", textareaKeyUp);
+    comment_item_clone.find(".comment_form").get() && comment_item_clone.find(".comment_form").on("submit", submitCommentForm);
+
+    comment_form.get().reset();
   }
+
   return false;
 }
 
