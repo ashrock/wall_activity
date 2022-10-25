@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facewall</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav id="header_navigation_wrapper">
+      <a href="/">Facewall</a>
+    </nav>
+  </header>
+  <main id="wrapper">
+    <h1>Facewall</h1>
+    <form action="/" method="post" id="write_post_form">
+      <input type="hidden" name="post_id" value="0" id="post_id">
+      <textarea name="post_content" id="post_content" placeholder="Let's hear from you..."></textarea>
+      <div class="form_actions">
+        <div class="placheholder"></div>
+        <button type="submit" id="submit_btn" class="submit_btn">Post</button>
+      </div>
+    </form>
+    <div id="wall_posts">
+      <ul id="wall_posts_list"></ul>
+    </div>
+  </main>
+  <div id="clone_contents">
+    <ul id="clone_list">
+      <li class="wall_post_item wall_post_item_clone">
+        <p class="post_content"></p>
+        <ul class="comments_list"></ul>
+        <form action="/" method="post" class="comment_form">
+          <textarea name="comment_content" placeholder="Write comment here..." class="comment_content"></textarea>
+          <div class="form_actions">
+            <div class="placheholder"></div>
+            <button type="submit" class="comment_btn">Comment</button>
+          </div>
+        </form>
+      </li>
+      <li class="comment_item comment_item_clone">
+        <p class="comment_content"></p>
+      </li>
+    </ul>
+  </div>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

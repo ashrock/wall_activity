@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Facewall</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav id="header_navigation_wrapper">
+      <a href="/">Facewall</a>
+    </nav>
+  </header>
+  <main id="login_wrapper">
+    <form action="/wall.html" method="get" id="login_form">
+      <div class="form_header">
+        <h1>Login</h1>
+        <a href="./signup.html">Signup</a>
+      </div>
+      <label for="email_address">
+        <span>Email Address</span>
+        <input type="email" name="email_address" id="email_address" class="email_address" placeholder="Enter your email address">
+      </label>
+      <label for="password">
+        <span>Password</span>
+        <input type="password" name="password" id="password" class="password" placeholder="Enter your password">
+      </label>
+      <div class="form_actions">
+        <div class="placheholder error_messages"></div>
+        <button type="submit" id="submit_btn" class="submit_btn">Login</button>
+      </div>
+    </form>
+  </main>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
